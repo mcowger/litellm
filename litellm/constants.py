@@ -406,6 +406,7 @@ LITELLM_CHAT_PROVIDERS = [
     "novita",
     "meta_llama",
     "featherless_ai",
+    "synthetic",
     "nscale",
     "nebius",
     "dashscope",
@@ -600,6 +601,7 @@ openai_compatible_providers: List = [
     "meta_llama",
     "publicai",  # PublicAI - JSON-configured provider
     "featherless_ai",
+    "synthetic",
     "nscale",
     "nebius",
     "dashscope",
@@ -626,6 +628,7 @@ openai_text_completion_compatible_providers: List = (
         "meta_llama",
         "llamafile",
         "featherless_ai",
+        "synthetic",
         "nebius",
         "dashscope",
         "moonshot",
@@ -772,6 +775,13 @@ featherless_ai_models: set = set(
         "mistralai/Mistral-Small-24B-Instruct-2501",
         "mistralai/Mistral-Nemo-Instruct-2407",
         "ProdeusUnity/Stellar-Odyssey-12b-v0.0",
+    ]
+)
+
+synthetic_models: set = set(
+    [
+        # Synthetic supports various models through their API
+        # Users can specify any model name supported by Synthetic
     ]
 )
 

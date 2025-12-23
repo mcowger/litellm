@@ -5600,6 +5600,11 @@ def validate_environment(  # noqa: PLR0915
                 keys_in_environment = True
             else:
                 missing_keys.append("FEATHERLESS_AI_API_KEY")
+        elif custom_llm_provider == "synthetic":
+            if "SYNTHETIC_API_KEY" in os.environ:
+                keys_in_environment = True
+            else:
+                missing_keys.append("SYNTHETIC_API_KEY")
         elif custom_llm_provider == "gemini":
             if ("GOOGLE_API_KEY" in os.environ) or ("GEMINI_API_KEY" in os.environ):
                 keys_in_environment = True

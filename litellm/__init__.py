@@ -518,6 +518,7 @@ cloudflare_models: Set = set()
 codestral_models: Set = set()
 friendliai_models: Set = set()
 featherless_ai_models: Set = set()
+synthetic_models: Set = set()
 palm_models: Set = set()
 groq_models: Set = set()
 azure_models: Set = set()
@@ -764,6 +765,8 @@ def add_known_models():
             gradient_ai_models.add(key)
         elif value.get("litellm_provider") == "featherless_ai":
             featherless_ai_models.add(key)
+        elif value.get("litellm_provider") == "synthetic":
+            synthetic_models.add(key)
         elif value.get("litellm_provider") == "deepgram":
             deepgram_models.add(key)
         elif value.get("litellm_provider") == "elevenlabs":
@@ -896,6 +899,7 @@ model_list = list(
     | gradient_ai_models
     | llama_models
     | featherless_ai_models
+    | synthetic_models
     | nscale_models
     | deepgram_models
     | elevenlabs_models
@@ -991,6 +995,7 @@ models_by_provider: dict = {
     "meta_llama": llama_models,
     "nscale": nscale_models,
     "featherless_ai": featherless_ai_models,
+    "synthetic": synthetic_models,
     "deepgram": deepgram_models,
     "elevenlabs": elevenlabs_models,
     "heroku": heroku_models,
@@ -1249,6 +1254,7 @@ nvidiaNimConfig = NvidiaNimConfig()
 nvidiaNimEmbeddingConfig = NvidiaNimEmbeddingConfig()
 
 from .llms.featherless_ai.chat.transformation import FeatherlessAIConfig
+from .llms.synthetic.chat.transformation import SyntheticConfig
 from .llms.cerebras.chat import CerebrasConfig
 from .llms.baseten.chat import BasetenConfig
 from .llms.sambanova.chat import SambanovaConfig
