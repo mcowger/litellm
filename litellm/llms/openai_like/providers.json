@@ -25,5 +25,14 @@
     "param_mappings": {
       "max_completion_tokens": "max_tokens"
     }
+  },
+  "synthetic": {
+    "base_url": "https://api.synthetic.new/v1",
+    "api_key_env": "SYNTHETIC_API_KEY",
+    "api_base_env": "SYNTHETIC_API_BASE",
+    "base_class": "openai_gpt",
+    "param_mappings": {
+      "max_completion_tokens": "max_tokens"
+    }
   }
 }
