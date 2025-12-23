@@ -552,6 +552,7 @@ openai_compatible_endpoints: List = [
     "api.galadriel.ai/v1",
     "api.llama.com/compat/v1/",
     "api.featherless.ai/v1",
+    "api.synthetic.new/v1",
     "inference.api.nscale.com/v1",
     "api.studio.nebius.ai/v1",
     "https://dashscope-intl.aliyuncs.com/compatible-mode/v1",
